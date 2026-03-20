@@ -1,35 +1,40 @@
-import React, { Component } from 'react'; // 1. Added React import
+import { Component } from "react";
 
-export default class Login extends Component {
-  constructor() {
-    super();
-  
-   this.btnHandler = this.btnHandler.bind(this);
-    this.textHandler = this.textHandler.bind(this);
-  }
+export default class Login extends Component
+{
+    constructor()
+    {
+        super();
+        this.msg = "Default Msg"
+        this.state = {msg:"Default"}
+        this.textHandler = this.textHandler.bind(this);
+    }
 
-  btnHandler() {
-    console.log("btn handler is called");
-  }
+    btnHandler()
+    {
+        console.log("btnHandler")
+    }
 
-  textHandler(e) {
-    console.log("text handler is called");
-    console.log(e.target.value)
-    this.msg=e.target.value
+    textHandler(e)
+    {
+        console.log("textHandler")
+        //console.log(e);
+        console.log(e.target);
+        console.log(e.target.name);
+        console.log(e.target.value);
+        //this.msg = e.target.value;
+        //this.msg = "New msg" + e.target.value;
+        this.setState({msg: e.target.value});
+    }
 
-  }
-
-  render() {
-    
-    return (
-      <div>
-        <p>login form</p>
-        <input type="text" onChange={this.textHandler} ></input>
-        <button type="button" onClick={this.btnHandler}>
-          login
-        </button>
-        <p>data{this.msg}</p>
-      </div>
-    );
-  }
+    render()
+    {
+        return <>
+        <h1>Login Form</h1>
+        User Name<input type = "text" name = "username" onBlur = {this.textHandler}></input>
+        Password<input type = "text" name = "password" onBlur = {this.textHandler}></input>
+        <input type = "button" value = {"Submit"} onClick = {this.btnHandler}/>
+        <p> Data: {this.state.msg}</p>
+        </>
+    }
 }

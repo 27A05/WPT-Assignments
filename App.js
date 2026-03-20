@@ -2,6 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import IsPalindrome from './isPalindrome';
 import Button from './Button';
+import Login from './login';
+import Counterfunction from './counterfunction';
+import Counter from './counter';
+import DisplayDropdown from './DisplayDropdown';
 
 function App() {
   return (
@@ -15,6 +19,18 @@ function App() {
     //       className="App-link"
     //       href="https://reactjs.org"
     //       target="_blank"
+
+
+
+
+
+
+
+
+
+
+
+    
     //       rel="noopener noreferrer"
     //     >
     //       Learn React
@@ -25,6 +41,10 @@ function App() {
     <div>
       <IsPalindrome> </IsPalindrome>
       <Button> </Button>
+      <Login> </Login>
+      <Counterfunction> </Counterfunction>
+      <Counter> </Counter>
+      <DisplayDropdown> </DisplayDropdown>
     </div>
   );
 }
